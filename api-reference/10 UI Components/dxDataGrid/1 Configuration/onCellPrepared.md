@@ -89,12 +89,12 @@ In the following code, the **onCellPrepared** function is used to change a `Prod
             repaintChangesOnly: true,
             onCellPrepared: function(e) {
                 if(e.rowType === "data" && e.column.dataField === "ProductName") {
-                    e.cellElement.css("color", e.data.Amount >= 10000 ? "green" : "red");
+                    e.cellElement[0].css("color", e.data.Amount >= 10000 ? "green" : "red");
                     // Tracks the `Amount` data field
                     e.watch(function() {
                         return e.data.Amount;
                     }, function() {
-                        e.cellElement.css("color", e.data.Amount >= 10000 ? "green" : "red");
+                        e.cellElement[0].css("color", e.data.Amount >= 10000 ? "green" : "red");
                     })
                 }
             }

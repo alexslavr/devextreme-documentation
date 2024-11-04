@@ -1,6 +1,8 @@
 ---
-id: Alert.id
-type: Number | String
+module: ui/chat
+export: Alert
+type: Object
+uid: ui/chat:Alert
 ---
 ---
 ##### shortDescription

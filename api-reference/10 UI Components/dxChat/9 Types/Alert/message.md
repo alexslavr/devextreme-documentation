@@ -1,6 +1,7 @@
 ---
-id: _ui_chat_TypingStartEvent.user
-type: User
+type: String
+default: ''
+uid: ui/chat:Alert.message
 ---
 ---
 ##### shortDescription

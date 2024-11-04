@@ -1,8 +1,10 @@
 ---
-id: Alert
 module: ui/chat
-export: Alert
+export: TypingStartEvent
 type: Object
+inherits: NativeEventInfo
+references: dxChat.Options.onTypingStart
+uid: ui/chat:TypingStartEvent
 ---
 ---
 ##### shortDescription

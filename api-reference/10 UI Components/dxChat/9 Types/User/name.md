@@ -4,7 +4,7 @@ type: String
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+A user's name displayed in the chat.
 
 ---
 <!-- Description goes here -->

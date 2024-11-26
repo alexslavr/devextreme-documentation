@@ -5,22 +5,110 @@ default: undefined
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+A function that is executed after a message is entered into the chat.
 
 ##### param(e): ui/chat:MessageEnteredEvent
-<!-- Description goes here -->
+Information about the event.
 
 ##### field(e.component): {WidgetName}
-<!-- Description goes here -->
+The UI component's instance.
 
 ##### field(e.element): DxElement
-<!-- Description goes here -->
+#include common-ref-elementparam with { element: "UI component" }
 
 ##### field(e.event): event
-<!-- Description goes here -->
+#include common-ref-eventparam
 
 ##### field(e.message): Message
-<!-- Description goes here -->
+The entered message.
 
 ---
-<!-- Description goes here -->
+Use this function to transfer messages to the backend:
+
+---
+##### jQuery
+
+    <!-- tab: index.js -->
+    $(() => {
+        function sendToBackend(message, chat) {
+            console.log(`Message sent to backend: ${message.text}`);
+            // Backend logic goes here
+        }
+        const chat = $("#chat").dxChat({
+            onMessageEntered: (e) => {
+                sendToBackend(e.message, chat);
+            },
+        }).dxChat('instance');
+    });
+
+##### Angular
+
+    <!-- tab: app.component.html -->
+    <dx-chat 
+        [items]="messages"
+        (onMessageEntered)="onMessageEntered($event)"
+    ></dx-chat>
+
+    <!-- tab: app.component.ts -->
+    import { DxChatTypes } from "devextreme-angular/ui/chat";
+    // ...
+    export class AppComponent {
+        messages: DxChatTypes.Message[] = [];
+        onMessageEntered({ message }) {
+            this.messages = [...this.messages, message];
+            this.sendToBackend(message);
+        }
+        sendToBackend(message: DxChatTypes.Message) {
+            console.log(`Message sent to backend: '${message.text}'`);
+            // Backend logic goes here
+        }
+    }
+
+##### Vue
+
+    <!-- tab: App.vue -->
+    <template>
+    <DxChat
+        :items="messages"
+        @message-entered="onMessageEntered"
+    />
+    </template>
+
+    <script setup>
+    import DxChat from "devextreme-vue/chat";
+    const onMessageEntered = ({ message }) => {
+        messages.value = [...messages.value, message];
+        sendToBackend(message);
+    };
+    const sendToBackend = (message) => {
+        console.log(`Message sent to backend: '${message.text}'`);
+        // Backend logic goes here
+    }
+    </script>
+
+##### React
+
+    <!-- tab: App.js -->
+    import React, { useCallback, useState } from "react";
+    import Chat from "devextreme-react/chat";
+
+    const App = () => {
+        const [messages, setMessages] = useState();
+        const onMessageEntered = useCallback(({ message }) => {
+            setMessages((prevMessages) => [...prevMessages, message]);
+            sendToBackend(message);
+        }, []);
+        const sendToBackend = (message) => {
+            console.log(`Message sent to backend: '${message.text}'`);
+            // Backend logic goes here
+        }
+
+        return (
+            <Chat
+                onMessageEntered={onMessageEntered}
+                items={messages}
+            />
+        );
+    };
+
+---

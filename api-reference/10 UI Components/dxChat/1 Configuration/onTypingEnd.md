@@ -5,19 +5,20 @@ default: undefined
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+A function that is called 2 seconds after a user stops typing or after a message is entered.
 
 ##### param(e): ui/chat:TypingEndEvent
-<!-- Description goes here -->
+Information about the event.
 
 ##### field(e.component): {WidgetName}
-<!-- Description goes here -->
+The UI component's instance.
 
 ##### field(e.element): DxElement
-<!-- Description goes here -->
+#include common-ref-elementparam with { element: "UI component" }
 
 ##### field(e.user): User
-<!-- Description goes here -->
+The user who entered the message.
 
 ---
-<!-- Description goes here -->
+#####See Also#####
+- [typingUsers](/Documentation/ApiReference/UI_Components/dxChat/Configuration/#typingUsers)

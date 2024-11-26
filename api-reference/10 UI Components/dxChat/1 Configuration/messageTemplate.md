@@ -5,22 +5,74 @@ default: null
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+Specifies a custom template for a chat message.
 
 ##### param(data): Object
-<!-- Description goes here -->
+The current data object.
 
 ##### field(data.component): dxChat
-<!-- Description goes here -->
+The Chat instance.
 
 ##### field(data.message): Message
-<!-- Description goes here -->
+The message text.
 
 ##### param(messageBubbleElement): DxElement
-<!-- Description goes here -->
+#include common-ref-elementparam with { element: "message" }
 
 ##### return: String | Element | jQuery
-<!-- Description goes here -->
+A template name or container.
 
 ---
-<!-- Description goes here -->
+---
+##### jQuery
+
+    <!-- tab: index.js -->
+    $(() => {
+        const chat = $("#chat").dxChat({
+            messageTemplate: (data, $container) => {
+                return data.message.id + " " + data.message.text;
+            },
+        }).dxChat('instance');
+    });
+
+##### Angular
+
+    <!-- tab: app.component.html -->
+    <dx-chat 
+        messageTemplate="message"
+    >
+        <div *dxTemplate="let data of 'message'">
+            {{data.message.id + " " + data.message.text}}
+        </div>
+    </dx-chat>
+
+##### Vue
+
+    <!-- tab: App.vue -->
+    <template>
+    <DxChat message-template="message">
+        <template #message="{ data }">
+            {{ data.message.id + " " + data.message.text }}
+        </template>
+    </DxChat>
+    </template>
+
+##### React
+
+    <!-- tab: App.js -->
+    import React from "react";
+    import Chat from "devextreme-react/chat";
+
+    const messageRender = (data) => {
+        return (<div>{data.message.id + " " + data.message.text}</div>);
+    }
+
+    const App = () => {
+        return (
+            <Chat
+                messageRender={messageRender}
+            />
+        );
+    };
+
+---

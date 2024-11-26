@@ -4,7 +4,7 @@ uid: ui/chat:Alert.message
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+The alert's message.
 
 ---
 <!-- Description goes here -->

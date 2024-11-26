@@ -4,7 +4,7 @@ uid: ui/chat:Alert.id
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+Alert's identification number or string.
 
 ---
 <!-- Description goes here -->

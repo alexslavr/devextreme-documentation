@@ -4,7 +4,7 @@ uid: ui/chat:MessageEnteredEvent.message
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+The message that was entered into the chat.
 
 ---
 <!-- Description goes here -->

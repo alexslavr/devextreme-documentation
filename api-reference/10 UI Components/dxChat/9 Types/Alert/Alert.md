@@ -7,7 +7,7 @@ generateTypeLink:
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+A configuration object for an alert.
 
 ---
 <!-- Description goes here -->

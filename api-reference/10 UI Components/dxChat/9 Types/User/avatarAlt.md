@@ -4,7 +4,7 @@ type: String
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+`alt` attribute for avatar image.
 
 ---
 <!-- Description goes here -->

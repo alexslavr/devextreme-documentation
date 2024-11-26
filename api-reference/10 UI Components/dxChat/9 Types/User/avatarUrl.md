@@ -4,7 +4,7 @@ type: String
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+An avatar URL.
 
 ---
 <!-- Description goes here -->

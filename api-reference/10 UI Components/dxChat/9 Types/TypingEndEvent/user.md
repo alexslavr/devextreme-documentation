@@ -4,7 +4,7 @@ uid: ui/chat:TypingEndEvent.user
 ---
 ---
 ##### shortDescription
-<!-- Description goes here -->
+The user who stopped typing.
 
 ---
 <!-- Description goes here -->

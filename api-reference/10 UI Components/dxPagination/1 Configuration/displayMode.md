@@ -1,5 +1,5 @@
 ---
-id: PagerBase.displayMode
+id: dxPagination.Options.displayMode
 type: Enums.DisplayMode
 default: 'adaptive'
 ---

@@ -1,5 +1,5 @@
 ---
-id: PagerBase.showPageSizeSelector
+id: dxPagination.Options.showPageSizeSelector
 type: Boolean
 default: false
 ---
@@ -8,4 +8,3 @@ default: false
 Specifies whether to show the page size selector.
 
 ---
-

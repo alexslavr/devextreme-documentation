@@ -1,5 +1,5 @@
 ---
-id: PagerBase.label
+id: dxPagination.Options.label
 type: String
 default: 'Page Navigation'
 ---

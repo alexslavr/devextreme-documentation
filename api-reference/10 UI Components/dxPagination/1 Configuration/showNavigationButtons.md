@@ -1,5 +1,5 @@
 ---
-id: PagerBase.showNavigationButtons
+id: dxPagination.Options.showNavigationButtons
 type: Boolean
 default: false
 ---

@@ -10,7 +10,7 @@ jobs:
 
     steps:
         - name: Checkout Docs
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
           with:
             path: documentation
             token: ${{ secrets.DXROBOT_PAT }}
@@ -18,7 +18,7 @@ jobs:
             ref: ${{ github.ref_name }}
 
         - name: Checkout DevExtreme
-          uses: actions/checkout@v3
+          uses: actions/checkout@v4
           with:
             path: devextreme
             repository: devexpress/devextreme
@@ -28,6 +28,11 @@ jobs:
           with:
             version: 9
             run_install: false
+
+        - name: Set up .NET
+          uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: 6.0.x
 
         - name: NPM - devextreme
           working-directory: devextreme

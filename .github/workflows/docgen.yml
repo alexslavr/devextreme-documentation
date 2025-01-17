@@ -13,14 +13,14 @@ jobs:
           uses: actions/checkout@v4
           with:
             path: documentation
-            ref: ${{ github.ref_name }}
+            ref: 25_1
 
         - name: Checkout DevExtreme
           uses: actions/checkout@v4
           with:
             path: devextreme
             repository: devexpress/devextreme
-            ref: ${{ github.ref_name }}
+            ref: 25_1
 
         - uses: pnpm/action-setup@v3
           with:
